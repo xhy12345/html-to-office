@@ -1,0 +1,36 @@
+{
+  "name": "html-to-office",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "html转word文档、pdf、excel",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xhy12345/html-to-office"
+  },
+  "main": "index.js",
+  "files": [
+		"package.json",
+		"README.md",
+		"index.js"
+	],
+  "keywords": [
+    "html转pdf",
+    "html转word",
+    "html转excel",
+		"js-word",
+    "js-excel",
+    "js-pdf"
+	],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
+    "html-docx-js-typescript": "^0.1.5",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5"
+  },
+  "author": "xianghy",
+  "license": "ISC"
+}
