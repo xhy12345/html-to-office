@@ -1,6 +1,6 @@
 {
   "name": "html-to-office",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "description": "html转word文档、pdf、excel",
   "repository": {
@@ -23,6 +23,13 @@
 	],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.3",
+    "html-docx-js-typescript": "^0.1.5",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5"
   },
   "peerDependencies": {
     "html2canvas": "^1.4.1",
