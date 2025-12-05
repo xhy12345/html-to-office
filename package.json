@@ -1,6 +1,6 @@
 {
   "name": "html-to-office",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "type": "module",
   "description": "html转word文档、pdf、excel",
   "repository": {

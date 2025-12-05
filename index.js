@@ -52,11 +52,18 @@ const htmlToDocx = (element, name = '') => {
  * @param {string} name 
  */
 const htmlToPdf = (element, name = '') => {
-    const ele = document.getElementById(`${element}`);
+    const eleInfo = document.getElementById(`${element}`);
+    const ele = eleInfo.cloneNode(true);
+    ele.style.animationName = 'none';
     let mathInfo = ele.getElementsByTagName('mjx-assistive-mml');
+    let cc = ele.querySelectorAll('*');
+    for(let i = 0; i < cc.length; i++) {
+        cc[i].style.animationName = 'none';
+    }
     for(let i = 0; i < mathInfo.length; i++) {
         mathInfo[i].style.opacity = '0';
     }
+    document.body.appendChild(ele);
     html2Canvas(ele, {
       svgRendering: true,
       useCORS: true,
@@ -82,6 +89,7 @@ const htmlToPdf = (element, name = '') => {
       if (unallottedHeight <= pageH) {
         pdf.addImage(pageData, 'JPEG', 20, 0, imgWidth, imgHeight)
         pdf.save(`${name || new Date().getTime()}.pdf`)
+        document.body.removeChild(ele);
         return
       }
   
@@ -93,6 +101,7 @@ const htmlToPdf = (element, name = '') => {
           pdf.addPage()
         }
       }
+      document.body.removeChild(ele);
       pdf.save(`${name || new Date().getTime()}.pdf`)
     })
 }
